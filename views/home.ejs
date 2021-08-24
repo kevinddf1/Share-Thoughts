@@ -1,0 +1,25 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+<br>
+<h4> <%= startText%> </h4>
+
+
+<button class="btn btn-primary" onclick="location.href = '/compose';" type="submit" name="button">Write a thought!</button>
+
+
+<% postsArray.forEach((e)=>{ %>
+   <h3> <%= e.title %> </h3>
+   <p>
+     <%= e.content.substring(0,100)+" ..." %>
+     <a href="/posts/<%=e._id%>">read more</a>
+   </p>
+<% }); %>
+
+<form class="" action="/deleteAll" method="post">
+  <button class="btn btn-danger" type="submit" name="button2">Delete All!</button>
+</form>
+
+<br>
+
+<%- include("partials/footer") -%>
