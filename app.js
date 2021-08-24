@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
-mongoose.connect("mongodb://localhost:27017/blogDB", {
+mongoose.connect("mongodb+srv://admin-fan:Test123@cluster0.htxab.mongodb.net/todolistDB", {
   useNewUrlParser: true
 });
 
@@ -106,7 +106,5 @@ app.post("/deleteAll", function(req, res) {
 
 
 
-
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
-});
+let port = process.env.PORT;
+app.listen(port);
