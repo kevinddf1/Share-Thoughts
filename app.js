@@ -1,7 +1,6 @@
 //jshint esversion:6
 
-import{mongodbURL} from "password.js";
-
+const password = require(__dirname + "/password.js");
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -15,7 +14,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
-mongoose.connect(mongodbURL, {
+mongoose.connect(password.mongodbURL, {
   useNewUrlParser: true
 });
 
