@@ -1,5 +1,7 @@
 //jshint esversion:6
 
+import{mongodbURL} from "./password.js"
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -13,7 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(express.static("public"));
-mongoose.connect("mongodb+srv://admin-fan:Test123@cluster0.htxab.mongodb.net/todolistDB", {
+mongoose.connect(mongodbURL, {
   useNewUrlParser: true
 });
 
