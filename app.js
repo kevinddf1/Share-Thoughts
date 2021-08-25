@@ -1,6 +1,6 @@
 //jshint esversion:6
 
-import{mongodbURL} from "./password.js"
+import{mongodbURL} from "password.js"
 
 const express = require("express");
 const bodyParser = require("body-parser");
